@@ -28,4 +28,11 @@ class LoginController extends Controller
             'email' => 'Credenciales incorrectas',
         ]);
     }
+
+    public function logout(Request $request)
+    {
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/login');
+    }
 }

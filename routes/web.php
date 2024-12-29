@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware(['guest', 'first.user.only'])->group(function () {
+    Route::get('/register', 'RegisterController@showRegistrationForm')->name('register');
+    Route::post('/register', 'RegisterController@register');
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/', 'HomeController')->name('home');
 });

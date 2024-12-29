@@ -8,5 +8,5 @@ Route::middleware(['guest', 'first.user.only'])->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/', 'HomeController')->name('home');
+    Route::get('/', 'HomeController@invoke')->name('home');
 });

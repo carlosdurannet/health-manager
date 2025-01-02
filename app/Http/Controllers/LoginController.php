@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -9,6 +10,9 @@ class LoginController extends Controller
 {
     public function showLoginForm()
     {
+        if(User::count() === 0) {
+            return redirect('/register');
+        }
         return view('auth.login');
     }
 

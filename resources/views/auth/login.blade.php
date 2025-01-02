@@ -1,4 +1,6 @@
-<!-- resources/views/auth/login.blade.php -->
+@extends('layouts.main')
+@section('content')
+    <!-- resources/views/auth/login.blade.php -->
 <div class="flex items-center justify-center min-h-screen px-4 py-12 bg-gray-50 sm:px-6 lg:px-8">
     <div class="w-full max-w-md space-y-8">
         <div>
@@ -41,3 +43,4 @@
         </form>
     </div>
 </div>
+@endsection

@@ -16,7 +16,7 @@ class AllowFirstUserOnly
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(User::count() > 0) {
+        if(User::exists()) {
             return redirect()->route('login');
         }
 

@@ -22,15 +22,15 @@
         <form class="mt-8 space-y-6" action="{{ route('login') }}" method="POST">
             @csrf
             <div class="-space-y-px rounded-md shadow-sm">
-                <div>
-                    <input name="email" type="email" required
-                        class="relative block w-full px-3 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-none appearance-none rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                        placeholder="Correo electrónico">
+                <div class="mb-4">
+                    <label for="name" class="block text-sm font-medium text-gray-700">Usuario</label>
+                    <input type="text" name="name" id="name" required
+                        class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                 </div>
                 <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
                     <input name="password" type="password" required
-                        class="relative block w-full px-3 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-none appearance-none rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                        placeholder="Contraseña">
+                        class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                 </div>
             </div>
 

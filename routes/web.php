@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BloodPressureRecordController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -13,6 +14,12 @@ Route::middleware(['guest', AllowFirstUserOnly::class])->group(function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/', HomeController::class)->name('home');
+
+    Route::get('/bpr/create', [BloodPressureRecordController::class, 'create'])->name('bpr.create');
+    Route::post('/bpr/create', [BloodPressureRecordController::class, 'store'])->name('bpr.store');
+    Route::get('/bpr/{record}/edit', [BloodPressureRecordController::class, 'edit'])->name('bpr.edit');
+    Route::put('/bpr/{record}/update', [BloodPressureRecordController::class, 'update'])->name('bpr.update');
+
 });
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');

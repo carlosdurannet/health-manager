@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="flex items-center justify-center min-h-screen">
-    <form action="{{ route('blood_pressure.store') }}" method="POST" class="w-full max-w-lg p-6 bg-white rounded shadow-lg">
+    <form action="{{ route('bpr-store') }}" method="POST" class="w-full max-w-lg p-6 bg-white rounded shadow-lg">
         @csrf
         <h2 class="mb-4 text-2xl font-bold text-center">Registrar Tensión Arterial</h2>
 
@@ -24,8 +24,8 @@
         </div>
 
         <div class="mb-4">
-            <label for="taken_at" class="block text-sm font-medium text-gray-700">Fecha y Hora</label>
-            <input type="datetime-local" name="taken_at" id="taken_at" required class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+            <label for="recorded_at" class="block text-sm font-medium text-gray-700">Fecha y Hora</label>
+            <input type="datetime-local" name="recorded_at" id="recorded_at" required class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
         </div>
 
         <button type="submit" class="w-full py-2 text-white bg-blue-500 rounded hover:bg-blue-600">Registrar</button>

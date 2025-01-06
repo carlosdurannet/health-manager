@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\BloodPressureRecordController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
@@ -19,6 +20,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/bpr/create', [BloodPressureRecordController::class, 'store'])->name('bpr.store');
     Route::get('/bpr/{record}/edit', [BloodPressureRecordController::class, 'edit'])->name('bpr.edit');
     Route::put('/bpr/{record}/update', [BloodPressureRecordController::class, 'update'])->name('bpr.update');
+
+    Route::resource('activity', ActivityController::class);
 
 });
 
